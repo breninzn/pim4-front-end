@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; background-color: #f9f9f9; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.novo {
+    padding: 20px;
+}
+
+.container-inicio {
+    padding: 3% 10% 0 10%;
+    width: 100%;
+}
+
+.card-45 {
+    width: 50%;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .card-45 {
+        width: 100%;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+}
+
+button:focus{
+    outline: none;
+}

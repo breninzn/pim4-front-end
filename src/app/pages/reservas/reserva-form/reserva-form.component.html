@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>Reserva</h2>
+<mat-dialog-content>
+  <form [formGroup]="formGroup">
+    <mat-form-field class="col-12 col-md-12" appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input formControlName="nome" matInput>
+    </mat-form-field>
+    <mat-form-field class="col-12 col-md-6" appearance="outline">
+      <mat-label>Celular</mat-label>
+      <input mask="(00) 00000-0000" formControlName="celular" matInput>
+    </mat-form-field>
+    <mat-form-field class="col-12 col-md-6" appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <input formControlName="email" matInput>
+    </mat-form-field>
+    <mat-form-field class="col-12 col-md-6" appearance="outline">
+      <mat-label>CPF</mat-label>
+      <input mask="000.000.000-00" formControlName="cpf" matInput>
+    </mat-form-field>
+    <mat-form-field class="col-12 col-md-6" appearance="outline">
+      <mat-label>Quarto</mat-label>
+      <mat-select formControlName="quarto">
+        <mat-option *ngFor="let quarto of quartos" [value]="quarto.id">
+          {{quarto.descricao}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="col-12 col-md-6" appearance="outline">
+      <mat-label>Data de entrada</mat-label>
+      <input formControlName="dataEntrada" matInput [matDatepicker]="datepickerEntrada">
+      <mat-datepicker-toggle matSuffix [for]="datepickerEntrada"></mat-datepicker-toggle>
+      <mat-datepicker #datepickerEntrada></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="col-12 col-md-6" appearance="outline">
+      <mat-label>Data de saída</mat-label>
+      <input formControlName="dataSaida" matInput [matDatepicker]="datepickerSaida">
+      <mat-datepicker-toggle matSuffix [for]="datepickerSaida"></mat-datepicker-toggle>
+      <mat-datepicker #datepickerSaida></mat-datepicker>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button color="primary" [disabled]="formGroup.invalid" [mat-dialog-close]="formGroup.getRawValue()"
+    cdkFocusInitial>Salvar</button>
+</mat-dialog-actions>

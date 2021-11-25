@@ -1,0 +1,12 @@
+<div class="container-inicio">
+    <div class="novo">
+        <button (click)="novoQuarto()" mat-raised-button>
+            Novo quarto
+        </button>
+    </div>
+    <div class="cards" *ngIf="!loading" >
+        <div class="card-45" *ngFor="let quarto of quartos" >
+            <app-card-quarto (refreshQuartos)="atualizaQuartos()" [quarto]="quarto" ></app-card-quarto>
+        </div>
+    </div>
+</div>

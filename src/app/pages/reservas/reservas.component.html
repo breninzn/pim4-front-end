@@ -1,0 +1,12 @@
+<div class="container-inicio">
+    <div class="novo">
+        <button (click)="novaReserva()" mat-raised-button>
+            Nova reserva
+        </button>
+    </div>
+    <div class="cards" *ngIf="!loading" >
+        <div class="card-45" *ngFor="let reserva of reservas" >
+            <app-card-reserva (refreshReservas)="getReservas()" [reserva]="reserva" ></app-card-reserva>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<mat-card class="card-hotel">
+    <mat-card-title>{{reserva.nome}}</mat-card-title>
+    <mat-card-content style="margin-top: 20px;">
+        <p>{{reserva.dataEntrada | date: 'dd/MM/yyyy'}} até {{reserva.dataSaida | date: 'dd/MM/yyyy'}}</p>
+        <p>nº {{reserva.quarto.numero}}  -  {{reserva.quarto.descricao}}</p>
+        <p>{{reserva.email}}  -  {{reserva.celular}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button color="primary" (click)="editarReserva()">Editar</button>
+        <button mat-button color="error" (click)="removerReserva()">Remover</button>
+    </mat-card-actions>
+</mat-card>
